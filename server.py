@@ -8,7 +8,7 @@ app = FastAPI()
 translator = Translator()
 
 # Load Whisper model on GPU
-model = WhisperModel("large-v3", device="cuda", compute_type="float16")
+model = WhisperModel("large-v3", device="cuda", compute_type="float32")
 
 @app.post("/transcribe")
 async def transcribe_audio(file: UploadFile = File(...)):
